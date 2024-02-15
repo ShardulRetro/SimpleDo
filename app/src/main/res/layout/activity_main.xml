@@ -110,9 +110,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="40dp"
             android:padding="16dp"
             android:id="@+id/Logout"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goals"
+            android:layout_marginStart="15dp"
+            android:padding="16dp"
+            android:id="@+id/Goals"
             />
     </LinearLayout>
 
