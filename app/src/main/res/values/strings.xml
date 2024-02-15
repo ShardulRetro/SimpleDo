@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name" translatable="false">SimpleDo</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Knox</string>
     <string name="add_entry">Add</string>
     <string name="steven_solleder" translatable="false">Steven Solleder</string>
     <string name="isabell_waas" translatable="false">Isabell Waas</string>
@@ -52,4 +52,19 @@
     <string override="true" name="mtrl_picker_cancel">Delete</string>
     <string override="true" name="mtrl_picker_confirm">Apply</string>
     <string name="past_notification">The notification lies in the past.</string>
+    <string name="my_notes" translatable="false">My Notes</string>
+    <string name="search_notes_here" translatable="false">Search Notes here...</string>
+    <string name="note_title" translatable="false">Note Title</string>
+    <string name="note_subtitle" translatable="false">Note Subtitle</string>
+    <string name="type_note_here" translatable="false">Type Note here</string>
+    <string name="miscellaneous" translatable="false">Miscellaneous</string>
+    <string name="pick_color" translatable="false">pick color</string>
+    <string name="add_image" translatable="false">Add Image</string>
+    <string name="add_url" translatable="false">Add url</string>
+    <string name="enter_url" translatable="false">Enter URL</string>
+    <string name="add" translatable="false">add</string>
+
+    <string name="delete_note" translatable="false">delete note</string>
+    <string name="are_you_sure_you_want_to_delete_this_note" translatable="false">Are you sure you want to delete this note?</string>
+    <string name="cancel_dialog" translatable="false">cancel dialog</string>
 </resources>
