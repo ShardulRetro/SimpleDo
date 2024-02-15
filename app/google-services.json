@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "937494372121",
+    "project_id": "knox-e5eeb",
+    "storage_bucket": "knox-e5eeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937494372121:android:f501c507acd8a3bbac2f88",
+        "android_client_info": {
+          "package_name": "de.gruenbaum.simpledo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDynBZR8fca7LBLxZrai4bZlRVr9Lp1en4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937494372121:android:10ae698fd4c82812ac2f88",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDynBZR8fca7LBLxZrai4bZlRVr9Lp1en4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

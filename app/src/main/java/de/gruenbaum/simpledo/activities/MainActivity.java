@@ -41,6 +41,7 @@ import de.gruenbaum.simpledo.adapters.NotesAdapter;
 import de.gruenbaum.simpledo.database.NotesDatabase;
 import de.gruenbaum.simpledo.entities.Note;
 import de.gruenbaum.simpledo.listeners.NotesListener;
+import de.gruenbaum.simpledo.presenter.Main;
 
 public class MainActivity extends AppCompatActivity implements NotesListener {
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
     FirebaseAuth auth;
     FirebaseUser user;
     Button logout;
+    Button Goals;
     TextView textView;
     Button timer;
     private RecyclerView notesRecyclerView;
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
             );
         });
         logout = findViewById(R.id.Logout);
+        Goals = findViewById(R.id.Goals);
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         if (user == null)
@@ -83,6 +86,14 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
             startActivity(intent);
             finish();
         }
+        Goals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -46,6 +46,7 @@ import java.util.Calendar;
 import java.util.function.BiConsumer;
 
 import de.gruenbaum.simpledo.*;
+import de.gruenbaum.simpledo.activities.MainActivity;
 import de.gruenbaum.simpledo.databinding.MainActivityBinding;
 import de.gruenbaum.simpledo.model.*;
 import de.gruenbaum.simpledo.presenter.notifications.INotificationHelper;
@@ -62,7 +63,7 @@ public class Main extends AppCompatActivity
     private IReminderSettingsAccessor reminderSettingsAccessor;
     private INotificationHelper notificationHelper;
 
-
+    Button Notes;
     private MainActivityBinding mainBinding;
     private boolean datePickerShown;
     private boolean timePickerShown;
@@ -82,7 +83,7 @@ public class Main extends AppCompatActivity
         super.onCreate(savedInstanceState);
         mainBinding=MainActivityBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
-
+        Notes = findViewById(R.id.Notes);
         dataAccessor=new DataAccessor(SimpleDo.getAppContext());
         sortSettingsAccessor=new SortSettingsAccessor(SimpleDo.getAppContext());
         reminderSettingsAccessor=new ReminderSettingsAccessor(SimpleDo.getAppContext());
@@ -96,7 +97,14 @@ public class Main extends AppCompatActivity
         chosenColor=Color.DEFAULT;
         reminding=false;
 
-
+        Notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         mainBinding.bottomAppBar.setNavigationOnClickListener(this::startSettings);
         mainBinding.bottomAppBar.findViewById(R.id.sortDirectionButton).setOnClickListener(this::sortEntriesByDirection);
         mainBinding.bottomAppBar.findViewById(R.id.sortCriterionButton).setOnClickListener(this::sortEntriesByCriterion);
@@ -268,9 +276,10 @@ public class Main extends AppCompatActivity
     }
 
     @Override public void onBackPressed() {
+        super.onBackPressed();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
         closeCard(400, 2);
-        if(currentSnackbar!=null) currentSnackbar.dismiss();
+        if (currentSnackbar != null) currentSnackbar.dismiss();
     }
 
 
