@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:name=".presenter.SimpleDo"
@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".presenter.Menu"
+            android:exported="false" />
 
         <receiver
             android:name=".presenter.notifications.ReminderBroadcastReceiver"
@@ -19,12 +22,10 @@
             android:exported="true" />
 
         <activity
-            android:windowSoftInputMode="adjustNothing"
             android:name=".presenter.Main"
             android:exported="true"
-            android:launchMode="singleTop">
-
-        </activity>
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustNothing"></activity>
         <activity
             android:name=".activities.Register"
             android:exported="false" />
@@ -42,21 +43,18 @@
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".presenter.SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".presenter.Main">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".presenter.Main"/>
+                android:value=".presenter.Main" />
         </activity>
-
-        <activity android:name=".presenter.BatteryOptimizationActivity"/>
-        <activity android:name=".presenter.AboutActivity"/>
-        <activity android:name=".presenter.LicencesActivity"/>
-
+        <activity android:name=".presenter.BatteryOptimizationActivity" />
+        <activity android:name=".presenter.AboutActivity" />
+        <activity android:name=".presenter.LicencesActivity" />
     </application>
+
 </manifest>

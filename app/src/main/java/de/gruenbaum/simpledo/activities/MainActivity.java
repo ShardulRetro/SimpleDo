@@ -30,6 +30,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -42,6 +43,7 @@ import de.gruenbaum.simpledo.database.NotesDatabase;
 import de.gruenbaum.simpledo.entities.Note;
 import de.gruenbaum.simpledo.listeners.NotesListener;
 import de.gruenbaum.simpledo.presenter.Main;
+import de.gruenbaum.simpledo.presenter.Menu;
 
 public class MainActivity extends AppCompatActivity implements NotesListener {
 
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
     FirebaseUser user;
     Button logout;
     Button Goals;
+    FloatingActionButton menu;
     TextView textView;
     Button timer;
     private RecyclerView notesRecyclerView;
@@ -76,29 +79,20 @@ public class MainActivity extends AppCompatActivity implements NotesListener {
                     REQUEST_CODE_ADD_NOTE
             );
         });
-        logout = findViewById(R.id.Logout);
-        Goals = findViewById(R.id.Goals);
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+        menu = findViewById(R.id.menu);
         if (user == null)
         {
             Intent intent = new Intent(getApplicationContext(),Login.class);
             startActivity(intent);
             finish();
         }
-        Goals.setOnClickListener(new View.OnClickListener() {
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Main.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(),Login.class);
+                Intent intent = new Intent(getApplicationContext(), Menu.class);
                 startActivity(intent);
                 finish();
             }

@@ -83,7 +83,7 @@ public class Main extends AppCompatActivity
         super.onCreate(savedInstanceState);
         mainBinding=MainActivityBinding.inflate(getLayoutInflater());
         setContentView(mainBinding.getRoot());
-        Notes = findViewById(R.id.Notes);
+
         dataAccessor=new DataAccessor(SimpleDo.getAppContext());
         sortSettingsAccessor=new SortSettingsAccessor(SimpleDo.getAppContext());
         reminderSettingsAccessor=new ReminderSettingsAccessor(SimpleDo.getAppContext());
@@ -97,14 +97,7 @@ public class Main extends AppCompatActivity
         chosenColor=Color.DEFAULT;
         reminding=false;
 
-        Notes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
         mainBinding.bottomAppBar.setNavigationOnClickListener(this::startSettings);
         mainBinding.bottomAppBar.findViewById(R.id.sortDirectionButton).setOnClickListener(this::sortEntriesByDirection);
         mainBinding.bottomAppBar.findViewById(R.id.sortCriterionButton).setOnClickListener(this::sortEntriesByCriterion);
@@ -272,7 +265,7 @@ public class Main extends AppCompatActivity
     }
 
     public void startSettings(View view) {
-        startActivity(new Intent(this, SettingsActivity.class));
+        startActivity(new Intent(this, Menu.class));
     }
 
     @Override public void onBackPressed() {
@@ -515,6 +508,8 @@ public class Main extends AppCompatActivity
         });
 
         addCardAnimatorSet.start();
+
+
     }
 
     private void closeCard(int duration, int interpolatorFactor) {

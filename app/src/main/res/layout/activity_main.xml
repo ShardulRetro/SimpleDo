@@ -80,11 +80,22 @@
         android:orientation="horizontal"
         android:padding="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more_vert"
+            android:backgroundTint="@color/colorQuickActionBackground"
+            app:borderWidth="0dp"
+            android:id="@+id/menu"
 
+
+            />
         <ImageView
             android:id="@+id/imageAddNote"
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_add_outline"
             app:tint="@color/white" />
@@ -106,22 +117,7 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_web_link"
             app:tint="@color/white" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:layout_marginStart="40dp"
-            android:padding="16dp"
-            android:id="@+id/Logout"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Goals"
-            android:layout_marginStart="15dp"
-            android:padding="16dp"
-            android:id="@+id/Goals"
-            />
+
     </LinearLayout>
 
     <ImageView
